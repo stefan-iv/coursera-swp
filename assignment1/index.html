@@ -24,14 +24,20 @@
           ng-model="lunchList"
           ng-class="{'validInput': messageState>0, 'invalidInput': messageState==0}">
 
-          <button
-            class="btn btn-default"
-            type="button"
-            name="checkIfTooMuch"
-            ng-click="checkLunch()">
-            Check if too much
-          </button>
+          (comma separated, empty items do not count)
 
+
+
+
+      </div>
+      <div class="form-group">
+        <button
+          class="btn btn-default"
+          type="button"
+          name="checkIfTooMuch"
+          ng-click="checkLunch()">
+          Check if too much
+        </button>        
       </div>
       <hr/>
       <div class="form-group message" ng-cloak>
