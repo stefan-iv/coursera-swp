@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lunch check</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="styles/custom.css" media="screen">
+  </head>
+  <body ng-app="LunchChecker">
+    <div ng-controller="LunchCheckerController" class="container">
+      <h1>Lunch check</h1>
+      <hr/>
+      <div class="form-group">
+        <label for="lunchList">Lunch list</label>
+
+        <!--
+          NOTE: Empty/whitespace only elements are not included in count, e.g.
+          item1,item2,,item3 or item1,item2, ,item3
+          will be interpreted as 3 elements
+        -->
+        <input
+          type="text"
+          name="lunchList"
+          ng-model="lunchList"
+          ng-class="{'validInput': messageState>0, 'invalidInput': messageState==0}">
+
+          <button
+            class="btn btn-default"
+            type="button"
+            name="checkIfTooMuch"
+            ng-click="checkLunch()">
+            Check if too much
+          </button>
+
+      </div>
+      <hr/>
+      <div class="form-group message" >
+        <span ng-if="messageState == 0" class="invalidValue">Please enter data first</span>
+        <span ng-if="messageState == 1" class="validValue">Enjoy!</span>
+        <span ng-if="messageState == 2" class="validValue">Too much!</span>
+      </div>
+
+    </div>
+    <script src="angular.min.js" charset="utf-8"></script>
+    <script src="app.js" charset="utf-8"></script>
+  </body>
+</html>
