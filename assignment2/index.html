@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Assignment 2</title>
+    <script src="js/angular.min.js" charset="utf-8"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="css/custom.css" media="screen">
+  </head>
+  <body ng-app="ShoppingCart">
+    <h1 class="text-center" >Shopping cart</h1>
+    <hr>
+    <div class="container">
+
+      <div class="list-group col-md-6" ng-controller="AvailableItemsController as availableItems">
+        <h3>
+          <span class="glyphicon glyphicon-th-list"></span>
+
+          To Buy
+        </h3>
+        <hr class="listSeparator">
+        <span ng-if="availableItems.nothingLeft()">No items to buy</span>
+          <div ng-repeat="item in availableItems.items" class="row">
+            <div class="col-md-4">Buy {{item.quantity}} {{item.name}}</div>
+            <div class="col-md-8 text-right">
+              <button class="btn btn-default" ng-click="availableItems.buy(item)">Bought</button>
+            </div>
+          </div>
+        <hr class="listSeparator">
+
+      </div>
+
+
+      <div class="list-group col-md-6" ng-controller="BoughtItemsController as boughtItems">
+        <h3><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Already Bought</h3>
+        <hr class="listSeparator">
+        <span ng-if="boughtItems.nothingBought()">Nothing bought yet</span>
+          <div ng-repeat="item in boughtItems.items" class="row">
+            <div class="col-md-8">Bought {{item.quantity}} {{item.name}}</div>
+          </div>
+        <hr class="listSeparator">
+      </div>
+    </div>
+    <hr>
+  </body>
+</html>
