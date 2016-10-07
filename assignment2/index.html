@@ -34,7 +34,7 @@
       <div class="list-group col-xs-6" ng-controller="BoughtItemsController as boughtItems">
         <h3>
           <span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Already Bought
-          <button ng-if="!boughtItems.nothingBought()" type="button" class="btn btn-danger" ng-click="boughtItems.empty()">Empty cart</button>
+          <button ng-if="!boughtItems.nothingBought()" type="button" class="btn btn-danger btn-xs" ng-click="boughtItems.empty()">Empty cart</button>
         </h3>
         <hr class="listSeparator">
         <span ng-if="boughtItems.nothingBought()">Nothing bought yet</span>
