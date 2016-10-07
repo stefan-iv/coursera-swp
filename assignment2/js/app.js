@@ -16,6 +16,7 @@
     ctrl.buy = function(item) {
       ItemService.buy(item);
     }
+
   };
 
   BoughtItemsController.$inject = ["ItemService"];
@@ -24,6 +25,10 @@
     var ctrl = this;
     ctrl.nothingBought = function() { return ItemService.isCartEmpty();}
     ctrl.items = ItemService.getBoughtItems();
+
+    ctrl.empty = function() {
+      ItemService.empty();
+    }
   };
 
   function ItemService() {
@@ -34,11 +39,21 @@
       { "name": "Rotten Sherry", "quantity": 10},
       { "name": "Calm Pearl", "quantity": 2},
       { "name": "Insane shot", "quantity": 4},
-      { "name": "Chilli nectar", "quantity": 9}
+      { "name": "Chilli nectar", "quantity": 9},
+      { "name": "Eastern Paralyzer", "quantity": 6},
+      { "name": "Winter Kiss", "quantity": 11}
     ];
 
 
     var boughtItems = [];
+
+    service.empty = function() {
+      while(boughtItems.length>0) {
+          var el = boughtItems[0];
+          boughtItems.splice(0,1);
+          availableItems.push(el);
+      }
+    }
 
     service.isInventoryEmpty = function() {
       return availableItems.length === 0;
@@ -64,5 +79,4 @@
       }
     }
   }
-
 })();
