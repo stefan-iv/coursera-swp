@@ -13,8 +13,8 @@
     ctrl.nothingLeft = function() { return ItemService.isInventoryEmpty();}
     ctrl.items = ItemService.getAvailableItems();
 
-    ctrl.buy = function(item) {
-      ItemService.buy(item);
+    ctrl.buy = function(index) {
+      ItemService.buy(index);
     }
 
   };
@@ -71,12 +71,10 @@
       return boughtItems;
     }
 
-    service.buy = function(item) {
-      var idx = availableItems.indexOf(item);
-      if(idx>=0) {
-        availableItems.splice(idx,1);
-        boughtItems.push(item);
-      }
+    service.buy = function(index) {
+      var item = availableItems[index];
+      availableItems.splice(index,1);
+      boughtItems.push(item);
     }
   }
 })();
