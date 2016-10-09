@@ -29,7 +29,14 @@
           </div>
         </div>
 
-        <menu-list error="menuSearch.error" items="menuSearch.found" working="menuSearch.working" on-remove="menuSearch.removeItem(index)" />
+        <menu-list
+          error="menuSearch.error"
+          nothing-found="menuSearch.nothingFound"
+          items="menuSearch.found"
+          working="menuSearch.working"
+          on-remove="menuSearch.removeItem(index)"
+          now-deleting="menuSearch.nowDeleting"
+          />
 
       </div>
     </div>

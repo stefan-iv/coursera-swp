@@ -14,15 +14,18 @@ angular.module("MenuSearch", ['ngAnimate'])
     ctrl.searchTerm="";
     ctrl.error = false;
     ctrl.working = false;
+    ctrl.nothingFound = false;
 
     var service = MenuSearchServiceFactory();
 
     ctrl.search = function(searchTerm) {
+      ctrl.nothingFound = false;
       ctrl.found = undefined;
       // skip service call if nothing entered
       searchTerm = searchTerm || '';
       if(searchTerm == '') {
         ctrl.found = [];
+        ctrl.nothingFound = true;
         return;
       }
 
@@ -31,11 +34,13 @@ angular.module("MenuSearch", ['ngAnimate'])
       var promise = service.getMatchedMenuItems(searchTerm);
 
       promise.then(function(data) {
+        ctrl.nothingFound = (data.length == 0);
         ctrl.found = data;
         ctrl.working = false;
       }).catch(function(error) {
         ctrl.working = false;
         ctrl.error = true;
+
         $timeout(function () {
           ctrl.error = false;
         }, 3000);
@@ -43,7 +48,13 @@ angular.module("MenuSearch", ['ngAnimate'])
     };
 
     ctrl.removeItem = function(index) {
-      ctrl.found.splice(index,1);
+      var item = ctrl.found[index];
+      ctrl.nowDeleting = item.id;
+      $timeout(function() {
+        ctrl.found.splice(index,1);
+        ctrl.nowDeleting = undefined;
+      }, 150);
+
     };
   };
 
@@ -82,7 +93,9 @@ angular.module("MenuSearch", ['ngAnimate'])
         items: '<',
         onRemove: '&',
         error: '<',
-        working: '<'
+        nothingFound: '<',
+        working: '<',
+        nowDeleting: '<'
       },
       controller: MenuListDirectiveController,
       controllerAs: 'list',
