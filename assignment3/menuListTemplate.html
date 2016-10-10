@@ -1,11 +1,13 @@
 <ul class="list-group">
   <li
     ng-repeat="item in list.items"
-    class="list-group-item"
+    class="list-group-item clearfix"
     >
+
+    <span class="pull-left button-group" style="margin-right:10px">
     <button class="btn btn-primary" ng-click="list.onRemove({index: $index})">Don't want this one!</button>
-    &nbsp;
-    <span class="emphasize">{{item.name}}</span> - {{item.description}}
+    </span>
+    <span class="emphasize">&nbsp;{{item.name}}</span> - {{item.description}}</span>
   </li>
 </ul>
 <div ng-show="list.working" class="text-center"><img src="images/gears.svg"></div>
