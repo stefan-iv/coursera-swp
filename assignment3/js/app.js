@@ -48,13 +48,7 @@ angular.module("MenuSearch", ['ngAnimate'])
     };
 
     ctrl.removeItem = function(index) {
-      var item = ctrl.found[index];
-      ctrl.nowDeleting = item.id;
-      $timeout(function() {
-        ctrl.found.splice(index,1);
-        ctrl.nowDeleting = undefined;
-      }, 150);
-
+      ctrl.found.splice(index,1);
     };
   };
 
@@ -94,8 +88,7 @@ angular.module("MenuSearch", ['ngAnimate'])
         onRemove: '&',
         error: '<',
         nothingFound: '<',
-        working: '<',
-        nowDeleting: '<'
+        working: '<'
       },
       controller: MenuListDirectiveController,
       controllerAs: 'list',

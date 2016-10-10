@@ -2,9 +2,7 @@
   <li
     ng-repeat="item in list.items"
     class="list-group-item"
-    ng-animate="'animate'"
-    ng-class="{'animate-leave': list.nowDeleting=={{item.id}}, 'animate-leave-active': list.nowDeleting == {{item.id}}}">
-
+    >
     <button class="btn btn-primary" ng-click="list.onRemove({index: $index})">Don't want this one!</button>
     &nbsp;
     <span class="emphasize">{{item.name}}</span> - {{item.description}}
