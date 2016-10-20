@@ -1,21 +1,20 @@
-(function () {
-'use strict';
+(function() {
+    'use strict';
 
-  angular.module("RestaurantApp")
-    .config(RoutesConfig);
+    angular.module("RestaurantApp")
+        .config(RoutesConfig);
 
-  RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+    RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-  function RoutesConfig($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("/");
+    function RoutesConfig($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise("/");
 
-    $stateProvider
-      .state("home", {
-        url: "/",
-        templateUrl: "templates/home.template.html"
-      }
-    );
+        $stateProvider
+            .state("home", {
+                url: "/",
+                templateUrl: "templates/home.template.html"
+            });
 
-}
+    }
 
 })()

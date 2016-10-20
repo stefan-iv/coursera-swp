@@ -5,3 +5,17 @@ body {
 .header {
   background-color: #abcdef;
 }
+
+
+.logo {
+  width: 160px;
+  margin-right:40px;
+}
+
+.header h1 {
+    margin: 0;
+    padding: 10px;
+    font-family: 'Holtwood One SC', serif;
+    font-size: 4em;
+    white-space: nowrap;
+}

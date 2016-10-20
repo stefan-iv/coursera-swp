@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Assignment 4</title>
-    <script src="js/angular.min.js" charset="utf-8"></script>
-    <script src="js/angular-animate.js" charset="utf-8"></script>
-    <script src="js/angular-ui-router.min.js" charset="utf-8"></script>
+    <head>
+        <meta charset="utf-8"b>
+        <title>Assignment 4</title>
+        <link href="https://fonts.googleapis.com/css?family=Holtwood+One+SC" rel="stylesheet">
 
-    <!-- modules -->
-    <script src="app/RestaurantApp.module.js" charset="utf-8"></script>
-    <script src="app/routes.js" charset="utf-8"></script>
+        <script src="js/angular.min.js" charset="utf-8"></script>
+        <script src="js/angular-animate.js" charset="utf-8"></script>
+        <script src="js/angular-ui-router.min.js" charset="utf-8"></script>
+        <!-- modules -->
 
-    <!-- controllers -->
-
-
-    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" href="css/custom.css" media="screen">
-  </head>
-  <body ng-app="RestaurantApp">
-    <div class="jumbotron header">
-    <h1 class="text-center">Krusty Burger</h1>
-    <p class="text-center"><a ui-sref="home"><img src="images/Krusty-1.png" width="140" /></a></p>
-    </div>
-    <div class="container">
-      <ui-view></ui-view>
-    </div>
-  </body>
+        <script src="app/RestaurantApp.module.js" charset="utf-8"></script>
+        <script src="app/routes.js" charset="utf-8"></script>
+        <!-- controllers -->
+        <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+        <link rel="stylesheet" href="css/custom.css" media="screen">
+    </head>
+    <body ng-app="RestaurantApp">
+        <div class="header">
+            <h1><a ui-sref="home"><img class="logo" src="images/Krusty-1.png"></a>Krusty&nbsp;Burger</h1>
+        </div>
+        <hr>
+        <div class="container-fluid">
+            <ui-view></ui-view>
+        </div>
+    </body>
 </html>
