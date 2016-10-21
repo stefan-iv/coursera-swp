@@ -1,9 +1,9 @@
 body {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
 }
 
 .header {
-  background-color: #abcdef;
+  background-color: #eeeeee;
 }
 
 
@@ -18,4 +18,11 @@ body {
     font-family: 'Holtwood One SC', serif;
     font-size: 4em;
     white-space: nowrap;
+    color: #FE4D23;
+}
+
+
+.thumbnail {
+  background-color: #efefef;
+  color: #FE4D23;
 }
