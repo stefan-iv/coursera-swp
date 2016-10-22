@@ -6,7 +6,8 @@
             templateUrl: 'templates/item-list.template.html',
             bindings: {
                 itemList: '<',
-                categoryName: '<'
+                categoryName: '<',
+                nothingFound: '<'
             }
         });
 })()

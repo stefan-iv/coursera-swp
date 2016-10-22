@@ -1,10 +1,13 @@
-<h1 class="text-center listTitle">{{$ctrl.categoryName}}</h1>
-<!-- <h3 class="text-center">{{$ctrl.categoryName}}</h3> -->
-<div class="list-group container">
-    <div class="item" ng-repeat="item in $ctrl.itemList">
-        <div class="thumbnail">
-            <h4 class="krusty krustyCaption">{{item.name}}</h4>
-            <span class="krustyDescription">{{item.description}}</span>
+<div ng-if="$ctrl.nothingFound" class="text-center listTitle">No soup for you, come back one year</div>
+<div ng-if="!$ctrl.nothingFound">
+    <h1 class="text-center listTitle">{{$ctrl.categoryName}}</h1>
+    <!-- <h3 class="text-center">{{$ctrl.categoryName}}</h3> -->
+    <div class="list-group container">
+        <div class="item" ng-repeat="item in $ctrl.itemList">
+            <div class="thumbnail">
+                <h4 class="krusty krustyCaption">{{item.name}}</h4>
+                <span class="krustyDescription">{{item.description}}</span>
+            </div>
         </div>
     </div>
 </div>

@@ -8,8 +8,13 @@
 
     function ItemsController(itemList, category) {
         var items = this;
-        items.itemList = itemList.menu_items;
-        items.categoryName = category[0].name;
+        if (itemList.menu_items.length == 0) {
+            items.nothingFound = true;
+        } else {
+            items.nothingFound = false;
+            items.itemList = itemList.menu_items;
+            items.categoryName = category[0].name;
+        }
     }
 
 })();
