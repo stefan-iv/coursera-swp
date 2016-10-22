@@ -5,7 +5,8 @@
         .component("itemList", {
             templateUrl: 'templates/item-list.template.html',
             bindings: {
-                itemList: '<'
+                itemList: '<',
+                categoryName: '<'
             }
         });
 })()

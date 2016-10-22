@@ -19,18 +19,22 @@
                 templateUrl: "templates/categories.template.html",
                 controller: "CategoriesController as categories",
                 resolve: {
-                    categoryList: ['MenuDataService', function(MenuDataService) {
+                    categoryList: ["MenuDataService", function(MenuDataService) {
                         return MenuDataService.getCategories();
                     }]
                 }
             })
             .state("items", {
-                url: "/items/{category}",
+                url: "/items/:category",
                 templateUrl: "templates/items.template.html",
                 controller: "ItemsController as items",
+
                 resolve: {
-                    itemList: ['MenuDataService', '$stateParams', function(MenuDataService, $stateParams) {
+                    itemList: ["MenuDataService", "$stateParams", function(MenuDataService, $stateParams) {
                         return MenuDataService.getMenuItemsForCategory($stateParams.category);
+                    }],
+                    category: ["MenuDataService", "$stateParams", function(MenuDataService,$stateParams){
+                        return MenuDataService.getSingleCategory($stateParams.category);
                     }]
                 }
             });

@@ -1,7 +1,7 @@
 <h1 class="text-center listTitle">Categories</h1>
 <div class="row list-group">
     <div class="item col-xs-4 col-lg-4" ng-repeat="item in $ctrl.categoryList" >
-        <a class="thumbnail" ui-sref="items({category: item.short_name})">
+        <a class="thumbnail" ui-sref="items({category: item.short_name, categoryName: item.name})">
             <div class="text-center">
                 <h4 class="krusty">{{item.name}}</h4>
             </div>
