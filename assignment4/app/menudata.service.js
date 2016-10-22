@@ -15,8 +15,6 @@
                 url: CategoriesLocation
             });
 
-
-
             return response.then(function(response) {
                 return response.data;
             });
@@ -26,7 +24,7 @@
         var response = $http({
             method: "GET",
             url: MenuItemsLocation,
-            parameters: {"category": category}
+            params: {"category": category}
         });
 
         return response.then(function(response) {

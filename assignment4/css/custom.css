@@ -12,17 +12,24 @@ body {
   margin-right:40px;
 }
 
+.krusty {
+  font-family: 'Holtwood One SC', serif;
+  color: #FE4D23;
+}
+
 .header h1 {
     margin: 0;
     padding: 10px;
-    font-family: 'Holtwood One SC', serif;
     font-size: 4em;
     white-space: nowrap;
-    color: #FE4D23;
+}
+
+.listTitle {
+  margin-bottom: 1em;
+  font-size: 3em;
 }
 
 
 .thumbnail {
   background-color: #efefef;
-  color: #FE4D23;
 }

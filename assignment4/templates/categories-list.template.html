@@ -1,13 +1,10 @@
-<!-- <ul class="list-group">
-  <li class="list-group-item" ng-repeat="item in $ctrl.categoryList">{{item.name}}</li>
-</ul> -->
-
-<div class="item col-xs-4 col-lg-4" ng-repeat="item in $ctrl.categoryList">
-  <div class="thumbnail">
-    <div class="text-center">
-      <h4>{{item.name}}</h4>
+<h1 class="text-center listTitle">Categories</h1>
+<div class="row list-group">
+    <div class="item col-xs-4 col-lg-4" ng-repeat="item in $ctrl.categoryList" >
+        <a class="thumbnail" ui-sref="items({category: item.short_name})">
+            <div class="text-center">
+                <h4 class="krusty">{{item.name}}</h4>
+            </div>
+        </a>
     </div>
-
-  </div>
-
 </div>

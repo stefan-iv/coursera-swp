@@ -1,0 +1,11 @@
+<h1 class="text-center listTitle">Menu Items</h1>
+<div class="row list-group">
+    <div class="item col-xs-4 col-lg-4" ng-repeat="item in $ctrl.itemList" >
+        <a class="thumbnail">
+            <div class="text-center">
+                <h4 class="krusty">{{item.name}}</h4>
+                {{item.description}}
+            </div>
+        </a>
+    </div>
+</div>
