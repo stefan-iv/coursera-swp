@@ -3,7 +3,7 @@
 
     angular.module("Spinner")
       .component("loadingSpinner", {
-        "templateUrl" : "templates/loadingSpinner.template.html",
-        "controller" : "LoadingSpinnerController"    
+        "templateUrl" : "templates/loadingspinner.template.html",
+        "controller" : "LoadingSpinnerController"
       });
 })();
