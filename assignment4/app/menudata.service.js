@@ -33,17 +33,6 @@
                 return response.data;
             });
         };
-        service.getSingleCategory = function(category) {
-            var response = $http({
-                method: "GET",
-                url: CategoriesLocation,
-            });
-
-            return response.then(function(response) {
-                var filter = $filter('filter');
-                return filter(response.data, category, GetSingle);
-            });
-        }
     }
 
     function GetSingle(actual, expected) {

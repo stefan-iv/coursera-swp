@@ -4,16 +4,16 @@
     angular.module("RestaurantApp")
         .controller("ItemsController", ItemsController);
 
-    ItemsController.$inject = ["itemList", "category"];
+    ItemsController.$inject = ["itemList"];
 
-    function ItemsController(itemList, category) {
+    function ItemsController(itemList) {
         var items = this;
         if (itemList.menu_items.length == 0) {
             items.nothingFound = true;
         } else {
             items.nothingFound = false;
             items.itemList = itemList.menu_items;
-            items.categoryName = category[0].name;
+            items.categoryName = itemList.category.name;
         }
     }
 

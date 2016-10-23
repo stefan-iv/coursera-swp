@@ -32,9 +32,6 @@
                 resolve: {
                     itemList: ["MenuDataService", "$stateParams", function(MenuDataService, $stateParams) {
                         return MenuDataService.getMenuItemsForCategory($stateParams.category);
-                    }],
-                    category: ["MenuDataService", "$stateParams", function(MenuDataService,$stateParams){
-                        return MenuDataService.getSingleCategory($stateParams.category);
                     }]
                 }
             });
