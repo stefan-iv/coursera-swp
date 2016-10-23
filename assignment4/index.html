@@ -11,12 +11,15 @@
         <!-- modules -->
         <script src="app/restaurantapp.module.js" charset="utf-8"></script>
         <script src="app/data.module.js" charset="utf-8"></script>
+        <script src="app/spinner.module.js" charset="utf-8"></script>
 
         <script src="app/data.constants.js" charset="utf-8"></script>
         <script src="app/menudata.service.js" charset="utf-8"></script>
 
         <script src="app/categories-list.component.js" charset="utf-8"></script>
         <script src="app/item-list.component.js" charset="utf-8"></script>
+        <script src="app/loadingspinner.component.js" charset="utf-8"></script>
+        <script src="app/loadingspinner.controller.js" charset="utf-8"></script>
         <script src="app/categories.controller.js" charset="utf-8"></script>
         <script src="app/items.controller.js" charset="utf-8"></script>
 
@@ -31,8 +34,10 @@
         </div>
         <hr>
         <div class="container-fluid krusty">
+
             <ui-view></ui-view>
         </div>
+<loading-spinner></loading-spinner>
 
     </body>
 </html>
